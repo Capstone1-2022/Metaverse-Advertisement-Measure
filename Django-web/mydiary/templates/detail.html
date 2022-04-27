@@ -1,0 +1,14 @@
+<h1>DIARY DETAIL</h1>
+
+<div>
+    {% if post.pub_date %}
+        <div>
+            {{post.pub_date}}
+        </div>
+    {%endif%}
+    <h1>{{post.title}}</h1>
+    <p>{{post.body|linebreaks}}</p>
+</div>
+
+<a href="{%url 'edit' index=post.pk%}">edit</a>
+<a href="{%url 'delete' pk=post.pk%}">delete</a>
