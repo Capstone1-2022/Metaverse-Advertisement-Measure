@@ -1,0 +1,7 @@
+<h1>촬영한 광고 영상을 업로드해 주세요</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">정산받기</button>
+</form>

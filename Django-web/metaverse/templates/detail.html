@@ -1,0 +1,21 @@
+<br><div>
+    {% if post.pub_date %}
+        <div>{{ post.pub_date }} 저장됨</div>
+    {%endif%}
+
+    {% if post.file %}
+    <h1>{{ post.file.name }}</h1>
+        <video controls width="500">
+            <source src="{{ post.file.url }}" type="video/webm">
+            <source src="{{ post.file.url }}" type="video/mp4">
+        </video><br><br>
+        광고 분석 결과 : 0명에게 노출됨 &nbsp;&nbsp;<button type="submit">결과보기</button><br><br>
+        받은 리워드 : 0원 <br><br>
+        다운로드 : <a href="{{ post.file.url }}" download>{{ post.file.name }}</a>
+    {% endif %}
+
+</div><br><br>
+
+<a href="{% url 'delete' pk=post.pk %}"> [ 삭제하기 ] </a> <br><br>
+
+<a href="{% url 'home' %}"> [ 목록 ] </a>

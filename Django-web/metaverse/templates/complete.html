@@ -1,0 +1,16 @@
+<h1>광고 정산이 완료되었습니다.</h1>
+
+{% if post.file %}
+    <h1>{{ post.file.name }}</h1>
+    <video controls width="500">
+        <source src="{{ post.file.url }}" type="video/webm">
+        <source src="{{ post.file.url }}" type="video/mp4">
+    </video><br><br>
+    다운로드 : <a href="{{ post.file.url }}" download>{{ post.file.name }}</a>
+{% endif %}
+
+<h3>> 해당 광고는 0명에게 노출되었습니다.</h3>
+<h3>> 0원의 리워드가 지급됩니다.</h3>
+<button type="submit">리워드 받기</button><br><br>
+
+<a href="{% url 'home' %}"> [ 홈으로 ] </a>

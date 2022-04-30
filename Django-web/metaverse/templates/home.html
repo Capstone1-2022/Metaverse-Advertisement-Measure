@@ -1,0 +1,11 @@
+<h1>Metaverse 광고 정산 페이지</h1>
+
+<a href="{% url 'new' %}">광고 제출하기</a>
+<br><br>
+
+
+<h2>[ 내가 제출한 광고 비디오 ]</h2>
+
+{% for post in posts_list %}
+    <a href="{% url 'detail' index=post.pk %}">{{post.file.name}}</a><br>
+{% endfor %}
