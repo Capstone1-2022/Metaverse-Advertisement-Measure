@@ -1,8 +1,0 @@
-need to be installed
-pycharm.
-tensorflow.
-keras.
-————————————————————————
-Put the code into pycharm 
-Then replace 1.png with your computer image path
-————————————————————————
