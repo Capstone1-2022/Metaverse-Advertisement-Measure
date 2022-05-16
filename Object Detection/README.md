@@ -24,3 +24,12 @@ wandb.ai 사용하여 실시간으로 학습과정 볼 수 있음
 
 사용하지 않아도 
 
+
+
+
+
+
+
+https://github.com/ppriyank/Object-Detection-Custom-Dataset-pytorch
+Custom Dataset으로 학습 가능한 SSD
+detect.py에서 img_path를 detect하고 싶은 이미지의 path로 바꾸고 python detect.py로 실행하면 verify 폴더 안에 detection.jpg가 생성됨
