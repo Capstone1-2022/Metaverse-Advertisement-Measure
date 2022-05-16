@@ -1,0 +1,10 @@
+need to be installed
+pycharm.
+tensorflow.
+keras.
+————————————————————————
+Put the code into pycharm 
+Then replace 1.png with your computer image path
+————————————————————————
+Text Image를 문자열로 치환 후 Count
+옷차림이 동일한 서로다른 User의 Avatar를 구별하여 좀 더 정확한 측정 결과를 반환할 수 있다.

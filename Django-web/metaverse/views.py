@@ -3,6 +3,11 @@ from django.utils import timezone
 from .models import Content
 from .forms import ContentForm
 
+import cv2
+import os
+import glob
+from tqdm import tqdm
+
 def home(request):
     posts = Content.objects.all()
     return render(request, 'home.html', {'posts_list':posts})
@@ -14,6 +19,25 @@ def new(request):
             post = form.save(commit=False)
             post.published_date = timezone.now()
             post.save()
+
+            video = "." + post.file.url
+            video = cv2.VideoCapture(video)
+            fps = video.get(cv2.CAP_PROP_FPS)
+            cnt = 1
+
+            if not os.path.exists("./FPS/" + post.file.name[:-4]):
+                os.mkdir("./FPS/" + post.file.name[:-4])
+
+            while(video.isOpened()):
+                ret, img = video.read()
+                if(int(video.get(1)) % int(fps) == 0):
+                    num = str(cnt).zfill(4)
+                    filename = "./FPS/" + post.file.name[:-4] + "/" + num + ".jpg"
+                    cv2.imwrite(filename, img)
+                    cnt += 1
+                if(ret == False): break
+            video.release()
+
             return render(request, 'complete.html')
     else:
         form = ContentForm()
