@@ -71,6 +71,6 @@ if __name__ == "__main__":
                     m[word]+=1
                 else:
                     m[word]=1
-    f=open("jieguo.txt",'w')
+    f=open("test2.txt",'w')
     for i in m.items():
         f.write(i[0]+': '+str(i[1])+'\r')
