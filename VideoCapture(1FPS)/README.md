@@ -6,7 +6,9 @@
 
 - 수행하지 못한 과제: 샘플링된 데이터에서 SSD VGG로 아바타 detection, detect된 아바타 크롭
 
-- 수행하지 못한 이유
+<br>
+
+> 수행하지 못한 이유
 
     로블록스 아바타를 detect하도록 pretrained된 SSD VGG 모델을 찾지 못 함
   
