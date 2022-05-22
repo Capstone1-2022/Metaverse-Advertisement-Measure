@@ -33,7 +33,7 @@ checkpoint = args.checkpoint
 # "BEST_checkpoint_ssd300.pth.tar"  # path to model checkpoint, None if none
 batch_size = 4  # batch size
 start_epoch = 0  # start at this epoch
-epochs = 200  # number of epochs to run without early-stopping
+epochs = 1000  # number of epochs to run without early-stopping
 epochs_since_improvement = 0  # number of epochs since there was an improvement in the validation metric
 best_loss = 100.  # assume a high loss at first
 workers = 4  # number of workers for loading data in the DataLoader

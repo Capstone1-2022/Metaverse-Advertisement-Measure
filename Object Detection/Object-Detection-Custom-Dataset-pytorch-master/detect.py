@@ -89,30 +89,47 @@ def detect(original_image, min_score, max_overlap, top_k, suppress=None , model=
 
     return annotated_image
 
+test=[
+'frame0004_jpg.rf.836163e1d1bce92c1d4c59b846084f23',
+'frame0018_jpg.rf.333e97e1cebadcb93c2fa0fa1500d032',
+'frame0029_jpg.rf.5ad1301e025382a2a599dd70b384ec82',
+'frame0034_jpg.rf.b2b395b3f74768f465896f5acd7d439e',
+'frame0057_jpg.rf.678f3e601011228492a64c44c594ebc8',
+'frame0076_jpg.rf.5b97fba7d1b3582b5aaafb81fa31c73e',
+'frame0132_jpg.rf.61f61aa3e2902869e420ef9b72745189',
+'frame0143_jpg.rf.a463580ce100645a2feecfd6967f57fc',
+'frame0145_jpg.rf.5202b01af0726465c77f3922dc8c5b40',
+'frame0238_jpg.rf.73a119308379a6029e5cf290230120f1',
+'frame0287_jpg.rf.2259ff1c26031219c52b7ee015e438cc',
+'frame0360_jpg.rf.484b908ecb88686d0cc9c54673f5ce9a',
+'frame0565_jpg.rf.17b507ebfaa62e2340983ac00061dfde',
+'frame0695_jpg.rf.0142a1f1e3a6d7438446b0dc84e5491e'
+]
 
 if __name__ == '__main__':
-    # checkpoint = 'BEST_pretrained_optimizercheckpoint_ssd300.pth.tar'
-    # checkpoint = 'BEST_pretrained_optimizercheckpoint_ssd300.pth.tar'
-    # checkpoint = 'BEST_sgd_scratchcheckpoint_ssd300.pth.tar'
-    checkpoint = 'BEST_checkpoint_ssd300.pth.tar'
-    
-    
-    # checkpoint = 'BEST_checkpoint_ssd300.pth.tar'
-    checkpoint = torch.load(checkpoint, map_location=device)
-    start_epoch = checkpoint['epoch'] + 1
-    best_loss = checkpoint['loss']
-    print('\nLoaded checkpoint from epoch %d. Best loss so far is %.3f.\n' % (start_epoch, best_loss))
-    model = checkpoint['model']
-    model = model.to(device)
-    model.eval()
-
-    # img_path = '/scratch/pp1953/cml/ass/class_pics/IMG_0211.jpg'
-    img_path = 'D:/장진우/캡스톤디자인I/광고 측정 모델/datasets/roblox/roblox data/JPEGImages/frame0073_jpg.rf.ec358d7c222270647f86260a056ecb60.jpg'
-    original_image = Image.open(img_path, mode='r')
-    original_image = original_image.convert('RGB')
-    try:
-        os.mkdir("verify/")
-    except OSError:
-        None
-    
-    detect(original_image, min_score=0.2, max_overlap=0.1, top_k=1000, model=model).save("verify/detection.jpg", "JPEG")
+	# checkpoint = 'BEST_pretrained_optimizercheckpoint_ssd300.pth.tar'
+	# checkpoint = 'BEST_pretrained_optimizercheckpoint_ssd300.pth.tar'
+	# checkpoint = 'BEST_sgd_scratchcheckpoint_ssd300.pth.tar'
+	checkpoint = 'BEST_checkpoint_ssd300.pth.tar'
+	
+	
+	# checkpoint = 'BEST_checkpoint_ssd300.pth.tar'
+	checkpoint = torch.load(checkpoint, map_location=device)
+	start_epoch = checkpoint['epoch'] + 1
+	best_loss = checkpoint['loss']
+	print('\nLoaded checkpoint from epoch %d. Best loss so far is %.3f.\n' % (start_epoch, best_loss))
+	model = checkpoint['model']
+	model = model.to(device)
+	model.eval()
+	num=0
+	for i in test:
+		img_path = 'D:/장진우/캡스톤디자인I/광고 측정 모델/datasets/roblox/roblox data/JPEGImages/'+i+'.jpg'
+		original_image = Image.open(img_path, mode='r')
+		original_image = original_image.convert('RGB')
+		try:
+			os.mkdir("verify/")
+		except OSError:
+			None
+		detect_path="verify/detection-"+str(num)+".jpg"
+		num+=1
+		detect(original_image, min_score=0.2, max_overlap=0.1, top_k=1000, model=model).save(detect_path, "JPEG")
