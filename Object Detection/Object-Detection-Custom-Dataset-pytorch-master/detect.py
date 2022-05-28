@@ -15,7 +15,7 @@ normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
 
 
-def detect(original_image, min_score, max_overlap, top_k, suppress=None , model=None):
+def detect(original_image, min_score, max_overlap, top_k, suppress=None , model=None, num=None):
     """
     Detect objects in an image with a trained SSD300, and visualize the results.
 
@@ -63,6 +63,11 @@ def detect(original_image, min_score, max_overlap, top_k, suppress=None , model=
 
     # Suppress specific classes, if needed
     for i in range(det_boxes.size(0)):
+        box_location = det_boxes[i].tolist()
+        crop_path="verify/cropped image/detection-"+str(num)+"-crop_"+str(i).zfill(3)+".jpg"
+        cropped=annotated_image.crop(box_location)
+        cropped.save(crop_path, "JPEG")
+    for i in range(det_boxes.size(0)):
         if suppress is not None:
             if det_labels[i] in suppress:
                 continue
@@ -86,7 +91,7 @@ def detect(original_image, min_score, max_overlap, top_k, suppress=None , model=
         draw.text(xy=text_location, text=det_labels[i].upper(), fill='white',
                   font=font)
     del draw
-
+    #print()
     return annotated_image
 
 test=[
@@ -130,6 +135,6 @@ if __name__ == '__main__':
 			os.mkdir("verify/")
 		except OSError:
 			None
-		detect_path="verify/detection-"+str(num)+".jpg"
+		detect_path="verify/verified image/detection-"+str(num)+".jpg"
 		num+=1
-		detect(original_image, min_score=0.2, max_overlap=0.1, top_k=1000, model=model).save(detect_path, "JPEG")
+		detect(original_image, min_score=0.2, max_overlap=0.1, top_k=1000, model=model, num=num).save(detect_path, "JPEG")
