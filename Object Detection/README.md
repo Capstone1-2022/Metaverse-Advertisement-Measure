@@ -1,34 +1,19 @@
-https://github.com/ultralytics/yolov5
+annotation.py
+- dataset 디렉토리에 있는 이미지와 xml 파일을 학습을 위해 분류해 json 파일에 저장함
+- 이미지의 확장자를 제외한 이름을 val 리스트에 넣어 validation set으로 사용
 
-SSD보다 이후에 나온 모델인 YOLOv5를 사용했음
+model.py
+- 모델의 구조와 loss 함수
+- loss 함수는 detection의 정확도 향상을 위해 confidence loss의 negative sample의 loss를 3배로 함
 
-cmd에서
+modified_train.py
+- 모델을 학습시킴
+- batch_size, epoch, lr 등의 패러미터를 조정할 수 있음 (현재는 로컬 환경의 성능 문제로 batch_size를 4로 줄임)
 
-    python train.py --img 640 --batch 4 --epochs 100 --data data.yaml --weights yolov5s.pt --cache
-
-사용하여 train함
-
-학습환경에 따라 batch size나 epoch 변경 가능
-
-학습결과는 yolov5-master/runs/train에 저장됨
-
-
-학습데이터는 Roboflow에서 만들었음
-
-Roboflow에서 학습데이터 가공 후 다운 받아서 datasets 폴더에 경로에 맞춰 넣으면 학습에 사용가능
-
-.yaml 파일은 yolov5-master/data에 넣어야 함
+detect.py
+- 모델을 사용해 object detection을 함
+- detection할 이미지를 dataset 디렉토리에 넣고 이미지의 확장자를 제외한 이름을 test 리스트에 넣어서 사용함
+- detect 함수에서 cropping과 detect된 object에 대해 사각형을 그리는 작업을 함
 
 
-wandb.ai 사용하여 실시간으로 학습과정 볼 수 있음
-
---------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-https://github.com/ppriyank/Object-Detection-Custom-Dataset-pytorch
-Custom Dataset으로 학습 가능한 SSD
-detect.py에서 img_path를 detect하고 싶은 이미지의 path로 바꾸고 python detect.py로 실행하면 verify 폴더 안의 verified image 폴더에 테스트 이미지에 레이블이 달린 것이 저장되고 레이블이 달릴 각각의 box를 crop한 것이 cropped image에 
+모델 출처:https://github.com/ppriyank/Object-Detection-Custom-Dataset-pytorch
