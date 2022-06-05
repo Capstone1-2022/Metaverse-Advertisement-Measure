@@ -65,7 +65,9 @@ def detect(original_image, min_score, max_overlap, top_k, suppress=None , model=
     for i in range(det_boxes.size(0)):
         box_location = det_boxes[i].tolist()
         crop_path="verify/cropped image/detection-"+str(num)+"-crop_"+str(i).zfill(3)+".jpg"
-        cropped=annotated_image.crop(box_location)
+        #if ((box_location[2]-box_location[0])*(box_location[3]-box_location[1]) < 5000):
+            #continue
+        cropped=annotated_image.crop([box_location[0]-5,box_location[1]-5,box_location[2]+5,box_location[3]+5])
         cropped.save(crop_path, "JPEG")
     for i in range(det_boxes.size(0)):
         if suppress is not None:
@@ -74,6 +76,8 @@ def detect(original_image, min_score, max_overlap, top_k, suppress=None , model=
 
         # Boxes
         box_location = det_boxes[i].tolist()
+        #if ((box_location[2]-box_location[0])*(box_location[3]-box_location[1]) < 5000):
+            #continue
         draw.rectangle(xy=box_location, outline=label_color_map[det_labels[i]])
         draw.rectangle(xy=[l + 1. for l in box_location], outline=label_color_map[
             det_labels[i]])  # a second rectangle at an offset of 1 pixel to increase line thickness
