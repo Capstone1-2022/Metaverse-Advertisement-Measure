@@ -1,0 +1,18 @@
+（1）need to be installed
+1.pycharm.
+2.tensorflow.
+3.keras.
+환경 설정 필요
+1.pycharm.
+2.tensorflow.
+3.keras.
+설치해야합니다
+————————————————————————
+（2）Put the code into pycharm 
+Then replace 1.png with your computer image path
+코드를 pycharm에 넣습니다.
+그런 다음 1.png를 컴퓨터 이미지 경로로 바꿉니다.
+————————————————————————
+Text Image를 문자열로 치환 후 Count
+옷차림이 동일한 서로다른 User의 Avatar를 구별하여 좀 더 정확한 측정 결과를 반환할 수 있다.
+3글자 이하로 차이나는 닉네임은 동일한 닉네임으로 처리하는 로직 추가하기.
