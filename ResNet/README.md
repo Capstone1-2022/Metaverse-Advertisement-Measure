@@ -21,5 +21,5 @@ ResNet50의 구조를 선언한 뒤, resnet50.pt에 저장되어있는 parameter
 load_resnet.ipynb 수행 시 ./test 폴더 내에 있는 이미지 폴더 각각을 레이블링해 모델의 입력값으로 한다.
 -> test data가공 = transforms와 DataLoader를 통해 수행
 -> get_representation 함수를 통해 test -> testoutputs, testlabels에 결과값 저장
--> get_lda() 또는 get_tsne()를 통해 3차원 결과값을 2차원으로 축소
+-> get_lda() 또는 get_tsne()를 통해 3차원이상의 고차원  결과값을 2차원으로 축소
 -> mscluster()를 통해 축소된 데이터를 mean-shift clustering하고 결과를 출력 (cluster의 수, cluster 결과)
