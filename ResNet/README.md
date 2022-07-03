@@ -1,7 +1,9 @@
 # ResNet50을 이용한 아바타 클러스터링
 ## ResNet50 학습
 ResNet50.ipynb를 수행하면 train폴더 내에 있는 이미지 폴더 각각을 레이블링해 학습을 시작한다.
+
 학습이 완료된 후의 parameter는 resnet50.pt에 저장됨
+
 대표적인 parameter인 lr, epoch는 13번 코드블록과 17번 코드블록에서 변경이 가능함.
 ```
 lr = 0.0008
