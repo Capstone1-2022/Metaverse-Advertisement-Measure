@@ -17,7 +17,8 @@ log_interval = 100
 
 ready_to_train.train(epochs, log_interval)
 ```
------------------------------------------------------
+
+
 ## Resnet50 기반 이미지 구분
 ResNet50의 구조를 선언한 뒤, resnet50.pt에 저장되어있는 parameter들을 불러온다.
 
