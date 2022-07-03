@@ -1,3 +1,4 @@
+## 파일구조
 > annotation.py
 - dataset 디렉토리에 있는 이미지와 xml 파일을 학습을 위해 분류해 json 파일에 저장함
 - 이미지의 확장자를 제외한 이름을 val 리스트에 넣어 validation set으로 사용
@@ -17,5 +18,7 @@
 
 모델 출처:https://github.com/ppriyank/Object-Detection-Custom-Dataset-pytorch
 
-> 로직 실행 방법
+<br>
+
+## 로직 실행 방법
 - .
