@@ -1,4 +1,4 @@
-## 설치 필요
+## 라이브러리 설치
 - `pip3 install tensorflow`
 - `pip3 install keras`
 - `pip3 install sklearn`
