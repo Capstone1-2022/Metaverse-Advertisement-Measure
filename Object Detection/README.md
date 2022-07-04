@@ -21,4 +21,11 @@
 <br>
 
 ## 로직 실행 방법
-- .
+> `python3 detect.py` 명령어로 파이썬 스크립트 실행 가능
+
+- 측정 대상 이미지 : `Object Detection/datasets/roblox/roblox data/JPEGImages` 에 있는 이미지들
+   - 그 중에서도 detect.py 코드 내부 102 번째 코드라인에서 test 리스트에 선언된 것들만 선택된다.
+- 측정 결과(아바타에 box 표시)
+   - `Object Detection/Object-Detection-Custom-Dataset-pytorch-master/verify/verified image` 에 저장된다.
+- 측정 결과(아바타 이미지 잘라내기)
+   - `Object Detection/Object-Detection-Custom-Dataset-pytorch-master/verify/verified image/cropped image` 에 저장된다.
