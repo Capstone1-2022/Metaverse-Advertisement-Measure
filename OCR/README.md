@@ -1,7 +1,7 @@
-> 1. need to be installed
-- tensorflow
-- keras
+> 라이브러리 설치
+- `pip3 install tensorflow`
+- `pip3 install keras`
+- `pip3 install sklearn`
+- `pip3 install baidu-aip`
 
-> 2. Put the code into pycharm 
-- Then replace 1.png with your computer image path
-- 그런 다음 1.png를 컴퓨터 이미지 경로로 바꿉니다.
+> Baidu Open API 구독 만료로 더이상 사용할 수 없습니다.
