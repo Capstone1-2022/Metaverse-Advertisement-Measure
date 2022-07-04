@@ -52,10 +52,13 @@ def baiduOCR(picfile):
      outfile: output file
     """
     filename = path.basename(picfile)
-
-    APP_ID = '26145723'  # The ID just obtained, the same below
-    API_KEY = 'aGkwAg40AqorWGGP9GUvFsGN'
-    SECRECT_KEY = 'SpBxYvzmYvyjWnsTOHbk088t6GioK0CQ'
+    
+    # Baidu-OCR API 구독 만료
+    # 구독시 ID/KEY/Secret-Key 가 발급됩니다.
+    # 현재 구독 만료된 상태로 사용이 불가합니다.
+    APP_ID = '-'
+    API_KEY = '-'
+    SECRECT_KEY = '-'
     client = AipOcr(APP_ID, API_KEY, SECRECT_KEY)
 
     i = open(picfile, 'rb')
