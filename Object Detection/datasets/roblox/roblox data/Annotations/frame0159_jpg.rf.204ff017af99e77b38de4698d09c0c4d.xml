@@ -1,0 +1,27 @@
+<annotation>
+	<folder></folder>
+	<filename>frame0159_jpg.rf.204ff017af99e77b38de4698d09c0c4d.jpg</filename>
+	<path>frame0159_jpg.rf.204ff017af99e77b38de4698d09c0c4d.jpg</path>
+	<source>
+		<database>roboflow.ai</database>
+	</source>
+	<size>
+		<width>416</width>
+		<height>416</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Roblox-Avatar</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>173</xmin>
+			<xmax>249</xmax>
+			<ymin>131</ymin>
+			<ymax>363</ymax>
+		</bndbox>
+	</object>
+</annotation>
