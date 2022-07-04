@@ -7,5 +7,5 @@
 
 ## 참고사항
 ```
-OCR / Object Detection / ResNet 각 폴더 내부에 README.md 파일 참고
+OCR / Object Detection / ResNet 각 폴더 내부 README.md 파일 참고
 ```
