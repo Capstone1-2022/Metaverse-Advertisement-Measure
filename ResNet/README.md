@@ -31,3 +31,8 @@ load_resnet.ipynb 수행 시 ./test 폴더 내에 있는 이미지 폴더 각각
 -> get_lda() 또는 get_tsne()를 통해 3차원이상의 고차원  결과값을 2차원으로 축소
 
 -> mscluster()를 통해 축소된 데이터를 mean-shift clustering하고 결과를 출력 (cluster의 수, cluster 결과)
+
+## 참고사항
+```
+구글 colab 페이지에서 ipynb 파일을 열면 조금 더 쉽게 코드 열람이 가능합니다.
+```
