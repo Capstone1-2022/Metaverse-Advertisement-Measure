@@ -123,7 +123,7 @@ if __name__ == '__main__':
 	model.eval()
 	num=0
 	for i in test:
-		img_path = 'D:/장진우/캡스톤디자인I/광고 측정 모델/datasets/roblox/roblox data/JPEGImages/'+i+'.jpg'
+		img_path = '../datasets/roblox/roblox data/JPEGImages/'+i+'.jpg'
 		original_image = Image.open(img_path, mode='r')
 		original_image = original_image.convert('RGB')
 		try:

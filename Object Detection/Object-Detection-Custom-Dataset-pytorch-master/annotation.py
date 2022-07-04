@@ -6,8 +6,8 @@ import xml.etree.ElementTree as ET
 
 unique_labels = {'roblox-avatar':1}
 
-path = os.path.abspath("D:/장진우/캡스톤디자인I/광고 측정 모델/datasets/roblox/roblox data/JPEGImages/")
-annotation_path = "D:/장진우/캡스톤디자인I/광고 측정 모델/datasets/roblox/roblox data/Annotations/"
+path = os.path.abspath("../datasets/roblox/roblox data/JPEGImages/")
+annotation_path = "../datasets/roblox/roblox data/Annotations/"
 dict ={}
 
 for file in glob.glob(annotation_path + "*.xml"): 

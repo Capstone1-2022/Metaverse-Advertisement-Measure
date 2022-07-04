@@ -64,7 +64,8 @@ def detect(original_image, min_score, max_overlap, top_k, suppress=None , model=
     # Suppress specific classes, if needed
     for i in range(det_boxes.size(0)):
         box_location = det_boxes[i].tolist()
-        crop_path="verify/cropped image/detection-"+str(num)+"-crop_"+str(i).zfill(3)+".jpg"
+       
+        crop_path="verify/verified image/cropped image/detection-"+str(num)+"-crop_"+str(i).zfill(3)+".jpg"
         #if ((box_location[2]-box_location[0])*(box_location[3]-box_location[1]) < 5000):
             #continue
         cropped=annotated_image.crop([box_location[0]-5,box_location[1]-5,box_location[2]+5,box_location[3]+5])
@@ -132,7 +133,7 @@ if __name__ == '__main__':
 	model.eval()
 	num=0
 	for i in test:
-		img_path = 'D:/장진우/캡스톤디자인I/광고 측정 모델/datasets/roblox/roblox data/JPEGImages/'+i+'.jpg'
+		img_path = '../datasets/roblox/roblox data/JPEGImages/'+i+'.jpg'
 		original_image = Image.open(img_path, mode='r')
 		original_image = original_image.convert('RGB')
 		try:
