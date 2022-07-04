@@ -1,3 +1,8 @@
+## SSD 모델 출처
+```
+https://github.com/ppriyank/Object-Detection-Custom-Dataset-pytorch
+```
+
 ## 파일구조
 > annotation.py
 - dataset 디렉토리에 있는 이미지와 xml 파일을 학습을 위해 분류해 json 파일에 저장함
@@ -15,8 +20,6 @@
 - 모델을 사용해 object detection을 함
 - detection할 이미지를 dataset 디렉토리에 넣고 이미지의 확장자를 제외한 이름을 test 리스트에 넣어서 사용함
 - detect 함수에서 cropping과 detect된 object에 대해 사각형을 그리는 작업을 함
-
-모델 출처:https://github.com/ppriyank/Object-Detection-Custom-Dataset-pytorch
 
 <br>
 
